@@ -10,7 +10,7 @@ const ForgotPassword = () => {
 
     try {
       const res = await axios.post(
-        "http://lynk-api.bonto.run/api/auth/forgot-password",
+        "https://lynk-api.bonto.run/api/auth/forgot-password",
         {
           email,
         }
