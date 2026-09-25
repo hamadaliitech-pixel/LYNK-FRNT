@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await axios.get("http://localhost:3000/api/auth/dashboard", {
+        await axios.get("http://lynk-api.bonto.run/api/auth/dashboard", {
           withCredentials: true,
         });
 

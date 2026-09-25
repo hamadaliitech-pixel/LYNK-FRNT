@@ -19,7 +19,7 @@ const Signup = () => {
     };
 
     try {
-      await axios.post("http://localhost:3000/api/auth/register", payload);
+      await axios.post("http://lynk-api.bonto.run/api/auth/register", payload);
       navigate("/Dashboard");
     } catch (error) {
       console.error("Register error:", error.response?.data || error.message);
@@ -36,7 +36,7 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/Login",
+        "http://lynk-api.bonto.run/api/auth/Login",
         data,
         {
           withCredentials: true,
@@ -260,7 +260,7 @@ const Signup = () => {
                 onClick={async () => {
                   try {
                     const res = await axios.post(
-                      "http://localhost:3000/api/auth/forgot-password",
+                      "http://lynk-api.bonto.run/api/auth/forgot-password",
                       { email },
                     );
 

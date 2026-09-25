@@ -19,7 +19,7 @@ const ResetPassword = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:3000/api/auth/reset-password/${token}`,
+        `http://lynk-api.bonto.run/api/auth/reset-password/${token}`,
         {
           password,
         }

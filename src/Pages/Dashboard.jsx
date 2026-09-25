@@ -9,7 +9,7 @@ const Dashboard = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/logout",
+        "http://lynk-api.bonto.run/api/auth/logout",
         {},
         {
           withCredentials: true,
