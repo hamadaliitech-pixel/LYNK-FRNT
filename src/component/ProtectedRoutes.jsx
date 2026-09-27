@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
         });
 
         setAuthenticated(true);
-      } catch () {
+      } catch (error) {
         setAuthenticated(false);
       } finally {
         setLoading(false);
