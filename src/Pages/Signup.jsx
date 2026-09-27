@@ -19,7 +19,14 @@ const Signup = () => {
     };
 
     try {
-      await axios.post("https://lynk-api.bonto.run/api/auth/register", payload);
+      await axios.post(
+        "https://lynk-api.bonto.run/api/auth/register",
+        payload,
+        {
+          withCredentials: true,
+        },
+      );
+
       navigate("/Dashboard");
     } catch (error) {
       console.error("Register error:", error.response?.data || error.message);
