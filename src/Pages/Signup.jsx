@@ -43,7 +43,7 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        "https://lynk-api.bonto.run/api/auth/Login",
+        "https://lynk-api.bonto.run/api/auth/login",
         data,
         {
           withCredentials: true,
