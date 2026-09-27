@@ -97,7 +97,7 @@ const Dashboard = () => {
             <div className="flex items-center gap-3">
 
               {/* Avatar */}
-              <div className="relative flex-shrink-0">
+              <div className="relative flex shrink-0">
 
                 <div className="w-12 h-12 rounded-full bg-[#e1e0ff] text-[#4648d4] flex items-center justify-center text-lg font-semibold">
                   U
@@ -166,7 +166,7 @@ const Dashboard = () => {
           {/* Home */}
           <button
             type="button"
-            className="flex flex-col items-center justify-center min-w-[56px] h-11 text-[#4648d4] font-semibold"
+            className="flex flex-col items-center justify-center min-w-14 h-11 text-[#4648d4] font-semibold"
           >
             <span className="text-xl">
               ▦
@@ -181,7 +181,7 @@ const Dashboard = () => {
           {/* Analytics */}
           <button
             type="button"
-            className="flex flex-col items-center justify-center min-w-[56px] h-11 text-[#767586] hover:text-[#131b2e] transition-colors"
+            className="flex flex-col items-center justify-center min-w-14 h-11 text-[#767586] hover:text-[#131b2e] transition-colors"
           >
             <span className="text-xl">
               ↗
@@ -196,7 +196,7 @@ const Dashboard = () => {
           {/* Activity */}
           <button
             type="button"
-            className="flex flex-col items-center justify-center min-w-[56px] h-11 text-[#767586] hover:text-[#131b2e] transition-colors"
+            className="flex flex-col items-center justify-center min-w-14 h-11 text-[#767586] hover:text-[#131b2e] transition-colors"
           >
             <span className="text-xl">
               ◉
@@ -211,7 +211,7 @@ const Dashboard = () => {
           {/* Profile */}
           <button
             type="button"
-            className="flex flex-col items-center justify-center min-w-[56px] h-11 text-[#767586] hover:text-[#131b2e] transition-colors"
+            className="flex flex-col items-center justify-center min-w-14 h-11 text-[#767586] hover:text-[#131b2e] transition-colors"
           >
             <span className="text-xl">
               ●
