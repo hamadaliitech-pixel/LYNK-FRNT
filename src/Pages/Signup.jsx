@@ -27,7 +27,7 @@ const Signup = () => {
         },
       );
 
-      navigate("/Dashboard");
+      navigate("/dashboard");
     } catch (error) {
       console.error("Register error:", error.response?.data || error.message);
     }
@@ -51,7 +51,7 @@ const Signup = () => {
       );
 
       console.log("User Login Successfully", res.data.user);
-      navigate("/Dashboard");
+      navigate("/dashboard");
     } catch (error) {
       console.error("Login error:", error.response?.data || error.message);
     }

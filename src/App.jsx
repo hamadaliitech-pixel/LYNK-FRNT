@@ -1,4 +1,3 @@
-import Home from "./Pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./Pages/Signup";
 import Dashboard from "./Pages/Dashboard";
@@ -11,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route
-          path="/Dashboard"
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
