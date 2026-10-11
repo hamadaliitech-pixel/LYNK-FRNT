@@ -1,29 +1,31 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import "tailwindcss";
 
 /* Font utility classes */
-
 .font-caveat {
   font-family: "Caveat", cursive;
 }
 
 @layer components {
   .lynk-card-theme {
-    @apply Card mt-15 bg-linear-to-b from-[#344B3F]/80 to-[#10261F]/90 relative z-10 w-96 max-w-md rounded-3xl bg-white/95 backdrop-blur-md p-8 shadow-2xl;
+    @apply mt-15 relative z-10 w-96 max-w-md rounded-3xl
+      bg-white/95 backdrop-blur-md p-8 shadow-2xl;
+
+    background-image: linear-gradient(
+      to bottom,
+      rgb(52 75 63 / 80%),
+      rgb(16 38 31 / 90%)
+    );
   }
-}
 
-
-@layer components {
   .lynk-input {
     @apply w-full rounded-full
       bg-[#173C2F] px-4 py-3 text-white outline-none
       transition focus:border-[#D0EAB6]/50
       focus:bg-[#173C2F];
   }
-}
 
-@layer components {
   .lynk-button {
     @apply mt-5 inline-flex min-h-13.5 w-full max-w-55
       items-center justify-center rounded-full
