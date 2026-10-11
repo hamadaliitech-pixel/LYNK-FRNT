@@ -2,6 +2,10 @@ import BG from "../assets/SignBg.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const AUTH_API_URL = `${API_BASE_URL}/api/auth`;
+
 const LoginPage = () => {
   const navigate = useNavigate();
   const [showForgot, setShowForgot] = useState(false);
@@ -21,7 +25,7 @@ const LoginPage = () => {
 
     try {
       const res = await axios.post(
-        "https://lynk.bonto.run/api/auth/Login",
+        `${AUTH_API_URL}/Login`,
         data,
         {
           withCredentials: true,
@@ -42,7 +46,7 @@ const LoginPage = () => {
 
     try {
       const res = await axios.post(
-        "https://lynk.bonto.run/api/auth/forgot-password",
+        `${AUTH_API_URL}/forgot-password`,
         { email: forgotEmail },
       );
 

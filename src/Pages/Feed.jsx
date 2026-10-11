@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import BG from "../assets/SignBg.png"
+import BG from "../assets/SignBg.png";
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const AUTH_API_URL = `${API_BASE_URL}/api/auth`;
+
 const getAvatar = (seed = "User") => {
   return `https://api.dicebear.com/10.x/line-face/svg?seed=${encodeURIComponent(seed)}`;
 };
@@ -21,7 +25,7 @@ const Feed = () => {
 
   useEffect(() => {
     axios
-      .get("https://lynk.bonto.run/api/auth/getLynk", {
+      .get(`${AUTH_API_URL}/getLynk`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -54,7 +58,7 @@ const Feed = () => {
 
     try {
       const res = await axios.post(
-        "https://lynk.bonto.run/api/auth/Lynks",
+        `${AUTH_API_URL}/Lynks`,
         {
           title: title.trim(),
           link: link.trim(),
@@ -87,7 +91,7 @@ const Feed = () => {
 
   const handleDeleteLynk = async (id) => {
     try {
-      await axios.delete(`https://lynk.bonto.run/api/auth/Lynks/${id}`, {
+      await axios.delete(`${AUTH_API_URL}/Lynks/${id}`, {
         withCredentials: true,
       });
 
@@ -112,7 +116,7 @@ const Feed = () => {
 
     try {
       const res = await axios.post(
-        "https://lynk.bonto.run/api/auth/profile/image",
+        `${AUTH_API_URL}/profile/image`,
         formData,
         {
           withCredentials: true,

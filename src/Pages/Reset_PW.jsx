@@ -1,6 +1,10 @@
 import BG from "../assets/SignBg.png";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const AUTH_API_URL = `${API_BASE_URL}/api/auth`;
+
 const ResetPassword = () => {
   const navigate = useNavigate();
   const { token } = useParams();
@@ -17,7 +21,7 @@ const ResetPassword = () => {
 
   try {
     const res = await axios.post(
-      `https://lynk.bonto.run/api/auth/reset-password/${token}`,
+      `${AUTH_API_URL}/reset-password/${token}`,
       { password }
     );
 

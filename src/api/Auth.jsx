@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const API_URL = "http://lynk.bonto.run/api/auth";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = `${API_BASE_URL}/api/auth`;
 
 export const register = async (userData) => {
   const response = await axios.post(
-    `${API_URL}/register`,
+    `${API_URL}/SignUp`,
     userData,
     { withCredentials: true }
   );

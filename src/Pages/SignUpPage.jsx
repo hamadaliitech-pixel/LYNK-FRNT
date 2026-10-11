@@ -5,6 +5,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo_content from "../Components/Logo_content";
 import Card from "../Components/Card";
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const AUTH_API_URL = `${API_BASE_URL}/api/auth`;
+
 const SignUpPage = () => {
   const [showForgot, setShowForgot] = useState(false);
   const [forgotEmail, setForgotEmail] = useState("");
@@ -25,7 +29,7 @@ const SignUpPage = () => {
 
     try {
       const res = await axios.post(
-        "https://lynk.bonto.run/api/auth/SignUp",
+        `${AUTH_API_URL}/SignUp`,
         data,
         {
           withCredentials: true,
@@ -45,7 +49,7 @@ const SignUpPage = () => {
 
     try {
       const res = await axios.post(
-        "https://lynk.bonto.run/api/auth/forgot-password",
+        `${AUTH_API_URL}/forgot-password`,
         { email: forgotEmail },
       );
 
