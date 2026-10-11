@@ -21,7 +21,7 @@ const LoginPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/Login",
+        "https://lynk.bonto.run/api/auth/Login",
         data,
         {
           withCredentials: true,
@@ -42,7 +42,7 @@ const LoginPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/forgot-password",
+        "https://lynk.bonto.run/api/auth/forgot-password",
         { email: forgotEmail },
       );
 

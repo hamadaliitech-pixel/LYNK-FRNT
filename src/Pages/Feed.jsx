@@ -21,7 +21,7 @@ const Feed = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/auth/getLynk", {
+      .get("https://lynk.bonto.run/api/auth/getLynk", {
         withCredentials: true,
       })
       .then((res) => {
@@ -54,7 +54,7 @@ const Feed = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/Lynks",
+        "https://lynk.bonto.run/api/auth/Lynks",
         {
           title: title.trim(),
           link: link.trim(),
@@ -87,7 +87,7 @@ const Feed = () => {
 
   const handleDeleteLynk = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/auth/Lynks/${id}`, {
+      await axios.delete(`https://lynk.bonto.run/api/auth/Lynks/${id}`, {
         withCredentials: true,
       });
 
@@ -112,7 +112,7 @@ const Feed = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/profile/image",
+        "https://lynk.bonto.run/api/auth/profile/image",
         formData,
         {
           withCredentials: true,
