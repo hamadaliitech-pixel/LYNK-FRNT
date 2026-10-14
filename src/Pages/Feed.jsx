@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import BG from "../assets/SignBg.png";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "https://lynk.bonto.run";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://localhost:3000";
 const AUTH_API_URL = `${API_BASE_URL}/api/auth`;
 
 const getAvatar = (seed = "User") => {
   return `https://api.dicebear.com/10.x/line-face/svg?seed=${encodeURIComponent(seed)}`;
 };
+
 const Feed = () => {
   // Lynk state variables
   const [Lynk, setLynk] = useState([]);

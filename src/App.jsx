@@ -7,6 +7,7 @@ import Feed from "./Pages/Feed";
 import LoginPage from "./Pages/Login";
 import Logout from "./Pages/Logout";
 import ResetPassword from "./Pages/Reset_PW";
+import ProtectedRoute from "./Components/Protectedroute";
 const App = () => {
   return (
     <Router>
@@ -16,7 +17,9 @@ const App = () => {
           <Route path="/SignUp" element={<SignUpPage />} />
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/Logout" element={<Logout />} />
-          <Route path="/Feed" element={<Feed />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/Feed" element={<Feed />} />
+          </Route>
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           {/* <Route path="/Lynk/Profile" element={<Profile />} /> */}
         </Routes>
