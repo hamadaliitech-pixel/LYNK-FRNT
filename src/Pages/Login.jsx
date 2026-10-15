@@ -3,7 +3,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "https://localhost:3000";
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://lynk.bonto.run")
+).replace(/\/+$/, "");
 const AUTH_API_URL = `${API_BASE_URL}/api/auth`;
 
 const LoginPage = () => {
