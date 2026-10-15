@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://lynk.bonto.run/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
