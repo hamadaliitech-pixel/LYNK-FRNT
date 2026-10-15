@@ -1,11 +1,8 @@
-export default {
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://lynk.bonto.run',
-        changeOrigin: true,
-        secure: false, // Set to false if the target has an invalid SSL certificate
-      },
-    },
-  },
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://lynk.bonto.run/api/:path*"
+    }
+  ]
 }
