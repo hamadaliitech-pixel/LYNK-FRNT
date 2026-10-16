@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import "tailwindcss";
 
-#root, body, html {
-  min-height: 100vh;
-  background-color: #f0f0f0; /* Helps visualize the container */
-}
-
 /* Font utility classes */
 .font-caveat {
   font-family: "Caveat", cursive;
