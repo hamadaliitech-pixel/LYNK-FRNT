@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Profile from "./Pages/Profile";
 // import Lynk_Creation_Form from "./Pages/Lynk_Creation_Form";
 import Home from "./Pages/Home";
@@ -8,17 +8,13 @@ import LoginPage from "./Pages/Login";
 import Logout from "./Pages/Logout";
 import ResetPassword from "./Pages/Reset_PW";
 import ProtectedRoute from "./Components/Protectedroute";
+
 const App = () => {
   return (
     <Router>
       <div>
         <Routes>
-             <Route path="*" element={<div>No route matched</div>} />
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Navigate to="/SignUp" replace />} />
-          <Route path="/login" element={<Navigate to="/Login" replace />} />
-          <Route path="/logout" element={<Navigate to="/Logout" replace />} />
-          <Route path="/feed" element={<Navigate to="/Feed" replace />} />
           <Route path="/SignUp" element={<SignUpPage />} />
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/Logout" element={<Logout />} />
@@ -27,6 +23,7 @@ const App = () => {
           </Route>
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           {/* <Route path="/Lynk/Profile" element={<Profile />} /> */}
+          <Route path="*" element={<div>No route matched</div>} />
         </Routes>
       </div>
     </Router>
