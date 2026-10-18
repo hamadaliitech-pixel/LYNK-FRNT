@@ -2,6 +2,7 @@ import BG from "../assets/SignBg.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { LetterCascade } from "@/components/ui/letter-cascade"
 
 const API_BASE_URL = (
   import.meta.env.VITE_API_URL ||
@@ -114,7 +115,7 @@ const LoginPage = () => {
             {/* Login Button */}
             <div className="flex justify-center">
               <button type="submit" className="lynk-button ">
-                Log In
+                <LetterCascade text="Login" className="font-bold"/>
               </button>
             </div>
           </form>

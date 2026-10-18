@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import BG from "../assets/SignBg.png";
 import { logout } from "../api/Auth";
+import Logo_content from "../Components/Logo_content.jsx"
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -33,9 +34,8 @@ const Logout = () => {
 
   return (
     <main
-      className={`relative flex min-h-dvh w-full overflow-hidden bg-zinc-900 bg-cover bg-center bg-no-repeat font-sans text-zinc-950 ${
-        isSignedOut ? "items-center justify-center px-5 py-12" : "flex-col"
-      }`}
+      className={`relative flex min-h-dvh w-full overflow-hidden bg-zinc-900 bg-cover bg-center bg-no-repeat font-sans text-zinc-950 ${isSignedOut ? "items-center justify-center px-5 py-12" : "flex-col"
+        }`}
       style={{ backgroundImage: `url(${BG})` }}
     >
       <div
@@ -76,13 +76,8 @@ const Logout = () => {
         </section>
       ) : (
         <>
-          <header className="relative z-10 flex items-center px-6 pt-7 sm:px-10 sm:pt-9 lg:px-16 lg:pt-11">
-            <div
-              aria-label="Lynk"
-              className="text-[25px] font-semibold tracking-[-0.055em] text-white sm:text-[28px]"
-            >
-              Lynk
-            </div>
+          <header className="relative z-10 flex items-center px-6 pt-7 sm:px-10 sm:pt-9 lg:px-16 lg:pt-11"> 
+            <Logo_content />
           </header>
 
           <section

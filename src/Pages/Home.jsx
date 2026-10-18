@@ -1,22 +1,34 @@
+
 import img from "../assets/LynkHome.png";
 import Logo_content from "../Components/Logo_content";
 import ButtonSignup from "../Components/btns/ButtonSignup";
+import { AnimatedGradient } from "@/components/ui/animated-gradient";
+
 const Home = () => {
   return (
-    <div>
-      <div
-        className="flex h-screen w-full items-end justify-center bg-cover bg-center bg-no-repeat pb-5"
-        style={{ backgroundImage: `url(${img})` }}
-      >
-        <div className="All-content-container flex flex-col h-screen justify-between w-screen pt-50">
-          <Logo_content text={"Your Social Media Accounts"}/>
+    <main className="relative h-screen w-full overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <AnimatedGradient config={{ preset: "Toxic" }} />
+      </div>
 
-          <div className="lower-content btn flex justify-center">
-            <ButtonSignup />
-          </div>
+      {/* Home background image */}
+      <div
+        className="absolute inset-0 z-[1] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${img})` }}
+      />
+
+      {/* Foreground content */}
+      <div className="relative z-10 flex h-full w-full flex-col justify-between pt-12 pb-5">
+        <header>
+          <Logo_content text={"Your Social Media Accounts"} />
+        </header>
+
+        <div className="flex justify-center">
+          <ButtonSignup />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

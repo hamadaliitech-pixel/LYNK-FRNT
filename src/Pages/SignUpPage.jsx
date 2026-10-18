@@ -131,7 +131,7 @@ const SignUpPage = () => {
               />
             </div>
             <div className="flex justify-center ">
-              <button type="submit" className=" lynk-button">
+              <button type="submit" className="lynk-button">
                 Create Account
               </button>
             </div>
