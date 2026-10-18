@@ -13,20 +13,19 @@ const Home = () => {
       </div>
 
       {/* Home background image */}
-      <div
-        className="absolute inset-0 z-[1] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${img})` }}
-      />
+
 
       {/* Foreground content */}
-      <div className="relative z-10 flex h-full w-full flex-col justify-between pt-12 pb-5">
+      <div className="relative z-10 flex h-full w-full flex-col justify-start pt-12 pb-5">
         <header>
           <Logo_content text={"Your Social Media Accounts"} />
         </header>
 
-        <div className="flex justify-center">
+
+        <div className="flex justify-start p-2 ">
           <ButtonSignup />
         </div>
+
       </div>
     </main>
   );

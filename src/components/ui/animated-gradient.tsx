@@ -359,7 +359,7 @@ export function AnimatedGradient({
         <WebGLErrorBoundary
             fallback={<WebGLFallback className={cn("absolute inset-0 overflow-hidden", className)} />}
         >
-            <div
+            <div    
                 ref={containerRef}
                 className={cn("absolute inset-0 overflow-hidden", className)}
                 style={{

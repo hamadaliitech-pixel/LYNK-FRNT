@@ -1,11 +1,11 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import "tailwindcss";
 @import "shadcn/tailwind.css";
 @import "tw-animate-css";
 @import "@fontsource-variable/geist";
 
-@custom-variant dark (&:is(.dark *));  
+@custom-variant dark (&:is(.dark *));
+
 /* Font utility classes */
 .font-caveat {
   font-family: "Caveat", cursive;
@@ -13,30 +13,19 @@
 
 @layer components {
   .lynk-card-theme {
-    @apply mt-15 relative z-10 w-96 max-w-md rounded-3xl
-      bg-white/95 backdrop-blur-md p-8 shadow-2xl;
+    @apply mt-15 relative z-10 w-96 max-w-md rounded-3xl bg-white/95 backdrop-blur-md p-8 shadow-2xl;
 
-    background-image: linear-gradient(
-      to bottom,
-      rgb(52 75 63 / 80%),
-      rgb(16 38 31 / 90%)
-    );
+    background-image: linear-gradient(to bottom,
+        rgb(52 75 63 / 80%),
+        rgb(16 38 31 / 90%));
   }
 
   .lynk-input {
-    @apply w-full rounded-full
-      bg-[#173C2F] px-4 py-3 text-white outline-none
-      transition focus:border-[#D0EAB6]/50
-      focus:bg-[#173C2F];
+    @apply w-full rounded-full bg-[#173C2F] px-4 py-3 text-white outline-none transition focus:border-[#D0EAB6]/50 focus:bg-[#173C2F];
   }
 
   .lynk-button {
-    @apply mt-5 inline-flex min-h-13.5 w-full max-w-55
-      items-center justify-center rounded-full
-      bg-[#c5ddac] px-7 text-xl font-semibold
-      text-zinc-950 shadow-sm
-      transition-[background-color,transform] duration-200
-      ease-out hover:bg-lime-200 sm:w-50;
+    @apply mt-5 inline-flex min-h-13.5 w-full max-w-55 items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 text-xl font-semibold text-white shadow-lg backdrop-blur-2xl transition-all duration-300 ease-out hover:bg-white/20 hover:border-white/40 hover:scale-[1.02] sm:w-50;
   }
 }
 
@@ -156,9 +145,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }

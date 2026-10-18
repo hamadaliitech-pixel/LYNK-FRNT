@@ -3,7 +3,7 @@ import Sprkl from "../assets/Sprkl.svg";
 const Logo_content = ({text}) => {
   return (
     <div className="upper content flex w-full flex-col gap-1 p-5">
-      <div className="justify-start">
+      <div className="justify-center">
         <div className=" pl-25">
           <img src={Sprkl} alt="Sprkl Logo" className="w-10" />
         </div>
