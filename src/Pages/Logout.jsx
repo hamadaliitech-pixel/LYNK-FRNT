@@ -46,88 +46,97 @@ const Logout = () => {
       {isSignedOut ? (
         <section
           aria-labelledby="logout-success-heading"
-          className="relative z-10 flex w-full max-w-[452px] flex-col items-center rounded-[28px] bg-white/95 px-8 py-10 shadow-[0_28px_80px_rgba(10,16,8,0.24)] backdrop-blur-md sm:px-11 sm:py-12"
+          className="Card relative z-10 flex w-96 max-w-md flex-col items-center rounded-3xl backdrop-blur-xl p-8 shadow-2xl"
         >
           <div
             aria-label="Lynk"
-            className="mb-9 text-[27px] font-bold tracking-[-0.055em] text-zinc-950"
+            className="mb-9 text-[27px] font-bold tracking-[-0.055em] text-white"
           >
-            Lynk<span className="text-lime-600">.</span>
+            Lynk<span className="text-lime-500">.</span>
           </div>
 
           <div className="w-full text-center">
             <h1
-              className="text-[30px] font-semibold leading-[1.18] tracking-[-0.04em] text-zinc-950 sm:text-[34px]"
+              className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
               id="logout-success-heading"
             >
               Signed out on this device
             </h1>
-            <p className="mx-auto mt-4 max-w-[320px] text-[15px] leading-6 text-zinc-600">
+            <p className="mt-2 text-sm text-white">
               Your Lynk session on this browser has ended.
             </p>
           </div>
 
-          <Link
-            className="mt-8 flex min-h-14 w-full items-center justify-center rounded-xl bg-zinc-950 px-5 py-3.5 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-500"
-            to="/Login"
-          >
-            Log in again
-          </Link>
+          <div className="flex justify-center">
+            <Link
+              className="lynk-button"
+              to="/Login"
+            >
+              Log in again
+            </Link>
+          </div>
         </section>
       ) : (
         <>
-          <header className="relative z-10 flex items-center px-6 pt-7 sm:px-10 sm:pt-9 lg:px-16 lg:pt-11"> 
-            <Logo_content />
-          </header>
+          {/* this is logout upper section */}
+          <div className="flex flex-col justify-between h-screen px-6 py-7">
 
-          <section
-            aria-labelledby="logout-heading"
-            className="relative z-10 mt-auto w-full bg-white px-6 pb-8 pt-8 sm:px-10 sm:pb-10 sm:pt-9 lg:px-16 lg:pb-12 lg:pt-11"
-          >
-            <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-7 lg:flex-row lg:items-center lg:justify-between lg:gap-14">
-              <div className="max-w-[620px]">
-                <h1
-                  className="text-[30px] font-semibold leading-[1.12] tracking-[-0.045em] text-zinc-950 sm:text-[36px] lg:text-[40px]"
-                  id="logout-heading"
-                >
-                  Sign out on this device?
-                </h1>
-                <p className="mt-3 max-w-[500px] text-[15px] leading-6 text-zinc-600 sm:mt-4 sm:text-base">
-                  Your Lynk session on this browser will end.
-                </p>
-              </div>
+            <header className="relative z-10 flex items-center sm:px-10 sm:pt-9 lg:px-16 lg:pt-11">
+              <Logo_content />
+            </header>
 
-              <div className="flex w-full flex-col items-stretch gap-4 lg:w-[220px] lg:shrink-0">
+            {/* this is logout lower section */}
+            <section
+              aria-labelledby="logout-heading"
+              className=" flex flex-col items-center justify-end px-4 "
+            >
+              <div className="Card w-96 max-w-md rounded-3xl backdrop-blur-xl p-8 shadow-2xl">
+                <div className="text-center">
+                  <h1
+                    className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
+                    id="logout-heading"
+                  >
+                    Sign out on this device?
+                  </h1>
+                  <p className="mt-2 text-sm text-white">
+                    Your Lynk session on this browser will end.
+                  </p>
+                </div>
+
                 {errorMessage && (
                   <p
-                    className="rounded-lg bg-red-50 px-3 py-2 text-sm leading-5 text-red-800"
+                    className="mt-3 text-center text-sm text-red-400"
                     role="alert"
                   >
                     {errorMessage}
                   </p>
                 )}
 
-                <button
-                  aria-busy={isSigningOut}
-                  className="inline-flex min-h-[54px] w-full items-center justify-center rounded-xl bg-zinc-950 px-7 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-950 disabled:cursor-wait disabled:opacity-70"
-                  disabled={isSigningOut}
-                  onClick={handleSignOut}
-                  type="button"
-                >
-                  {isSigningOut ? "Signing out…" : "Sign out"}
-                </button>
+                <div className="flex justify-center">
+                  <button
+                    aria-busy={isSigningOut}
+                    className="lynk-button disabled:cursor-wait disabled:opacity-70"
+                    disabled={isSigningOut}
+                    onClick={handleSignOut}
+                    type="button"
+                  >
+                    {isSigningOut ? "Signing out…" : "Sign out"}
+                  </button>
+                </div>
 
-                <button
-                  className="self-center px-3 py-1 text-sm font-medium text-zinc-600 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 hover:decoration-zinc-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500 disabled:cursor-wait disabled:opacity-60"
-                  disabled={isSigningOut}
-                  onClick={() => navigate(-1)}
-                  type="button"
-                >
-                  Cancel and return
-                </button>
+                <div className="mt-3 text-center">
+                  <button
+                    className="text-sm text-white hover:underline disabled:cursor-wait disabled:opacity-60"
+                    disabled={isSigningOut}
+                    onClick={() => navigate(-1)}
+                    type="button"
+                  >
+                    Cancel and return
+                  </button>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </>
       )}
     </main>

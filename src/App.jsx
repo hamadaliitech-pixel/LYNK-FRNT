@@ -8,7 +8,6 @@ import LoginPage from "./Pages/Login";
 import Logout from "./Pages/Logout";
 import ResetPassword from "./Pages/Reset_PW";
 import ProtectedRoute from "./Components/Protectedroute";
-
 const App = () => {
   return (
     <Router>

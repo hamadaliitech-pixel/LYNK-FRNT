@@ -10,8 +10,6 @@ const API_BASE_URL = (
 
 const API_URL = `${API_BASE_URL}/api/auth`;
 
-console.log("Production API URL:", API_URL);
-
 export const register = async (userData) => {
   const response = await axios.post(
     `${API_URL}/SignUp`,
