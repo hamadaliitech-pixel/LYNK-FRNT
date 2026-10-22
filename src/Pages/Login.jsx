@@ -70,7 +70,7 @@ const LoginPage = () => {
       >
         <div className="absolute inset-0 bg-black/30 " />
 
-        <div className="relative z-10 w-full max-w-md rounded-3xl bg-linear-to-b from-[#344B3F]/20 to-[#10261F]/90 backdrop-blur-sm p-8 shadow-2xl">
+        <div className="Card relative z-10 w-96 max-w-md rounded-3xl backdrop-blur-xl p-8 shadow-2xl">
           {/* Header */}
           <div className="mb-7 text-center">
             <h1 className="text-3xl font-bold text-white">Welcome back</h1>
@@ -135,7 +135,7 @@ const LoginPage = () => {
           <div className="mt-3 text-center">
             <button
               onClick={() => setShowForgot(true)}
-              className="text-sm text-white hover:text-black hover:underline"
+              className="text-sm text-white hover:underline"
             >
               Forgot your password?
             </button>
@@ -145,14 +145,16 @@ const LoginPage = () => {
 
       {showForgot && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
-          <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
-            <h2 className="text-2xl font-bold text-white">
-              Reset your password
-            </h2>
+          <div className="Card relative z-10 w-96 max-w-md rounded-3xl backdrop-blur-xl p-8 shadow-2xl">
+            <div className="text-center">
+              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                Reset your password
+              </h2>
 
-            <p className="mt-2 text-sm text-white">
-              Enter your email and we'll send you a reset link.
-            </p>
+              <p className="mt-2 text-sm text-white">
+                Enter your email and we'll send you a reset link.
+              </p>
+            </div>
 
             <form onSubmit={handleForgotPassword} className="mt-5 space-y-4">
               <input
@@ -161,15 +163,17 @@ const LoginPage = () => {
                 onChange={(e) => setForgotEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="lynk-input "
+                className="lynk-input"
               />
 
-              <button
-                type="submit"
-                className="w-full rounded-xl bg-black py-3 font-semibold text-white hover:bg-gray-800"
-              >
-                Send Reset Link
-              </button>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="lynk-button"
+                >
+                  Send Reset Link
+                </button>
+              </div>
             </form>
 
             {forgotMessage && (
@@ -178,15 +182,18 @@ const LoginPage = () => {
               </p>
             )}
 
-            <button
-              onClick={() => {
-                setShowForgot(false);
-                setForgotMessage("");
-              }}
-              className="mt-4 w-full text-sm text-gray-500 hover:text-white"
-            >
-              Cancel
-            </button>
+            <div className="mt-3 text-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowForgot(false);
+                  setForgotMessage("");
+                }}
+                className="text-sm text-white hover:underline"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -74,7 +74,7 @@ const SignUpPage = () => {
           Your Social Media Links all in one place
         </span>
 
-        <div className="Card mt-15 bg-linear-to-b from-[#344B3F]/80 to-[#10261F]/90 relative z-10 w-96 max-w-md rounded-3xl backdrop-blur-md p-8 shadow-2xl">
+        <div className="Card mt-15 relative z-10 w-96 max-w-md rounded-3xl backdrop-blur-xl p-8 shadow-2xl">
           <form
             className="space-y-4"
             autoComplete="off"
@@ -150,7 +150,7 @@ const SignUpPage = () => {
           <div className="mt-3 text-center">
             <button
               onClick={() => setShowForgot(true)}
-              className="text-sm text-white hover:text-black hover:underline"
+              className="text-sm text-white hover:underline"
             >
               Forgot your password?
             </button>
@@ -159,15 +159,17 @@ const SignUpPage = () => {
       </div>
 
       {showForgot && (
-        <div className="fixed bg-linear-to-b from-[#344B3F]/80 to-[#10261F]/90 inset-0 z-50 flex items-center justify-center px-4">
-          <div className="w-full max-w-md bg-linear-to-b from-[#344B3F]/80 to-[#10261F]/90 rounded-2xl  p-6 shadow-2xl">
-            <h2 className="text-2xl font-bold text-white">
-              Reset your password
-            </h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div className="Card relative z-10 w-96 max-w-md rounded-3xl backdrop-blur-xl p-8 shadow-2xl">
+            <div className="text-center">
+              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                Reset your password
+              </h2>
 
-            <p className="mt-2 text-sm text-white">
-              Enter your email and we'll send you a reset link.
-            </p>
+              <p className="mt-2 text-sm text-white">
+                Enter your email and we'll send you a reset link.
+              </p>
+            </div>
 
             <form onSubmit={handleForgotPassword} className="mt-5 space-y-4">
               <input
@@ -187,20 +189,23 @@ const SignUpPage = () => {
             </form>
 
             {forgotMessage && (
-              <p className="mt-4 text-center text-sm text-gray-600">
+              <p className="mt-4 text-center text-sm text-white">
                 {forgotMessage}
               </p>
             )}
 
-            <button
-              onClick={() => {
-                setShowForgot(false);
-                setForgotMessage("");
-              }}
-              className="mt-4 w-full text-sm text-gray-500 hover:text-black"
-            >
-              Cancel
-            </button>
+            <div className="mt-3 text-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowForgot(false);
+                  setForgotMessage("");
+                }}
+                className="text-sm text-white hover:underline"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       )}
